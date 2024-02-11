@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package producerconsumer;
+
+service ProducerConsumer {
+    rpc produce(ProduceRequest) returns (ProduceResponse);
+    rpc consume(ConsumeRequest) returns (ConsumeResponse);
+}
+
+message ProduceRequest {
+    string item = 1;
+}
+
+message ProduceResponse {
+    string message = 1;
+}
+
+message ConsumeRequest {
+}
+
+message ConsumeResponse {
+    string item = 1;
+}
